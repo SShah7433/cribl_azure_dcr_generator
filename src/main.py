@@ -51,7 +51,7 @@ def get_table_schema(table):
     # some tables do not have published schema information. for those, we skip
     if r.status_code == 404:
         return None
-    schema_elements = source.xpath('//*[@id="main"]/div[3]/table/tbody/tr[*]')
+    schema_elements = source.xpath("//table[2]/tbody/tr[*]")
 
     table = TableSchema(name=table)
     for schema_element in schema_elements:
